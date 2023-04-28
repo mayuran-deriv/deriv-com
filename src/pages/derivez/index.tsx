@@ -12,7 +12,7 @@ import { SEO } from 'components/containers'
 import { localize, WithIntl } from 'components/localization'
 import useRegion from 'components/hooks/use-region'
 import { TString } from 'types/generics'
-import DownloadApp from 'pages/derivez/_download-app'
+import DownloadApp from 'features/pages/derivez/_download-app'
 
 const seo_title: TString = '_t_Deriv EZ – a CFD trading platform | Deriv_t_'
 const seo_description: TString =
