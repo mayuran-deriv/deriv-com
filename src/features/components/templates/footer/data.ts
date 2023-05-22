@@ -105,19 +105,12 @@ const marketsLinks: SmartFooterLink[] = [
     {
         id: 3,
         data: {
-            text: '_t_ETF_t_',
-            url: { type: 'internal', to: '/markets/exchange-traded-funds/' },
-        },
-    },
-    {
-        id: 4,
-        data: {
             text: '_t_Cryptocurrencies_t_',
             url: { type: 'internal', to: '/markets/cryptocurrencies/' },
         },
     },
     {
-        id: 5,
+        id: 4,
         data: {
             text: '_t_Commodities_t_',
             url: { type: 'internal', to: '/markets/commodities/' },
