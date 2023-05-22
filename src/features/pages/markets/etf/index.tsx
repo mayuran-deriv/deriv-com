@@ -3,6 +3,7 @@ import ETFSteps from './etf-steps'
 import WhyETFTrade from './why-etf-trade'
 import HomePage from './home-page'
 import InstrumentsTableEtf from './instruments-etf'
+import OtherMarkets from './other-markets'
 
 const ETFMarket = () => {
     return (
@@ -12,6 +13,7 @@ const ETFMarket = () => {
             <InstrumentsTableEtf />
             <WhyETFTrade />
             <ETFSteps />
+            <OtherMarkets />
         </div>
     )
 }
