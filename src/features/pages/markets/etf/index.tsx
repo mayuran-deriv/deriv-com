@@ -3,16 +3,17 @@ import ETFSteps from './etf-steps'
 import WhyETFTrade from './why-etf-trade'
 import HomePage from './home-page'
 import InstrumentsTableEtf from './instruments-etf'
+import InstrumentsContentEtf from './instruments-etf/instrumental-table-content.tsx'
 
 const ETFMarket = () => {
     return (
-        <div>
+        <>
             <HomePage />
-
             <InstrumentsTableEtf />
+            <InstrumentsContentEtf />
             <WhyETFTrade />
             <ETFSteps />
-        </div>
+        </>
     )
 }
 
