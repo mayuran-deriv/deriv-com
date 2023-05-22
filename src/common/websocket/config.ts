@@ -32,6 +32,14 @@ export const domain_config = {
             hostname: 'eu.deriv.com',
             app_id: deriv_com_app_id,
         },
+        {
+            hostname: 'beta.deriv.com',
+            app_id: deriv_com_app_id,
+        },
+        {
+            hostname: 'beta-eu.deriv.com',
+            app_id: deriv_com_app_id,
+        },
     ],
     staging: {
         hostname: 'staging.deriv.com',
@@ -39,7 +47,7 @@ export const domain_config = {
     },
     beta: {
         hostname: 'beta.deriv.com',
-        app_id: 16303,
+        app_id: deriv_com_app_id,
     },
     test: {
         app_id: 11780,

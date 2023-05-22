@@ -23,13 +23,6 @@ export const marketItems: TMarketNavItem[] = [
         },
     },
     {
-        title: '_t_ETFs_t_',
-        link: {
-            type: 'internal',
-            to: '/markets/exchange-traded-funds/',
-        },
-    },
-    {
         title: '_t_Cryptocurrencies_t_',
         link: {
             type: 'internal',
