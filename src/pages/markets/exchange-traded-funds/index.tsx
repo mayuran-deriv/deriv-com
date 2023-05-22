@@ -22,6 +22,7 @@ const StocksAndIndicesPage = () => (
         /> */}
         <MarketNav />
         <ETFMarket />
+
         <Signup appearance={Appearances.public} />
     </Layout>
 )
