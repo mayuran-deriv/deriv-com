@@ -7,7 +7,11 @@ interface ImageBannerProps {
     item: HomepageBannerType
 }
 const ImageBanner = ({ item }: ImageBannerProps) => {
-    return <Flex.Box pt="10x">{item.image}</Flex.Box>
+    return (
+        <Flex.Box pt="10x" className={item_image}>
+            {item.image}
+        </Flex.Box>
+    )
 }
 
 export default ImageBanner

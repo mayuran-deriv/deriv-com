@@ -1,16 +1,19 @@
 @use 'features/styles/theme/theme-mixins' as *;
 
-.item_container {
-}
 .flex_container {
-    justify-content: center;
     @include breakpoints(tablet) {
-        justify-content: space-between;
         align-items: center;
+        margin-left: 12rem;
+    }
+}
+.item_image {
+    @include breakpoints(desktop) {
+        margin-left: 10rem;
+        width: 60%;
     }
 }
 .item_box {
-    @include breakpoints(tablet) {
-        inline-size: 44rem;
+    @include breakpoints(desktop) {
+        width: 40%;
     }
 }
