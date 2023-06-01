@@ -6,10 +6,8 @@ import Flex from 'features/components/atoms/flex-box'
 import Typography from 'features/components/atoms/typography'
 import { Localize } from 'components/localization'
 import CardBasic from 'features/components/atoms/card/card-primary'
-import useBreakpoints from 'components/hooks/use-breakpoints'
 
 const OtherMarkets = () => {
-    const { is_mobile_or_tablet } = useBreakpoints()
     return (
         <Container.Fluid as="section">
             <Flex.Box direction="col" gap="12x">
