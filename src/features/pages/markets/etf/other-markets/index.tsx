@@ -24,12 +24,18 @@ const OtherMarkets = () => {
                     <Localize translate_text="_t_Other markets you might be interested in_t_" />
                 </Typography.Heading>
             </Flex.Box>
-            <Flex.Box md={{ direction: 'row' }} direction="col" gap="4x">
-                {is_mobile_or_tablet ? (
-                    ETFOtherMarkets.map((card) => <CardBasic item={card} key={card.id} />)
-                ) : (
-                    <MarketsMainSlider cards={ETFOtherMarkets} />
-                )}
+            <Flex.Box visible="phone-and-tablet" md={{ direction: 'row' }} direction="col" gap="4x">
+                {ETFOtherMarkets.map((card) => (
+                    <CardBasic item={card} key={card.id} />
+                ))}
+            </Flex.Box>
+            <Flex.Box
+                visible="larger-than-tablet"
+                md={{ direction: 'row' }}
+                direction="col"
+                gap="4x"
+            >
+                <MarketsMainSlider cards={ETFOtherMarkets} />
             </Flex.Box>
         </Container.Fluid>
     )
