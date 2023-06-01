@@ -5,8 +5,11 @@ import Container from 'features/components/atoms/container'
 import Flex from 'features/components/atoms/flex-box'
 import Typography from 'features/components/atoms/typography'
 import { Localize } from 'components/localization'
+import CardBasic from 'features/components/atoms/card/card-primary'
+import useBreakpoints from 'components/hooks/use-breakpoints'
 
 const OtherMarkets = () => {
+    const { is_mobile_or_tablet } = useBreakpoints()
     return (
         <Container.Fluid as="section">
             <Flex.Box direction="col" gap="12x">
@@ -22,7 +25,11 @@ const OtherMarkets = () => {
                 </Typography.Heading>
             </Flex.Box>
             <Flex.Box md={{ direction: 'row' }} direction="col" gap="4x">
-                <MarketsMainSlider cards={ETFOtherMarkets} />
+                {is_mobile_or_tablet ? (
+                    ETFOtherMarkets.map((card) => <CardBasic item={card} key={card.id} />)
+                ) : (
+                    <MarketsMainSlider cards={ETFOtherMarkets} />
+                )}
             </Flex.Box>
         </Container.Fluid>
     )

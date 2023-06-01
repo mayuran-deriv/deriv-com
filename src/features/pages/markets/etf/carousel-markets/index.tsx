@@ -11,35 +11,33 @@ interface MarketsMainSliderProps {
 }
 
 const MarketsMainSlider = ({ cards }: MarketsMainSliderProps) => {
+    console.log("object,'wwww")
     const { is_mobile_or_tablet } = useBreakpoints()
+    console.log(is_mobile_or_tablet, 'www')
     return (
         <>
-            {is_mobile_or_tablet ? (
-                cards.map((card) => <CardBasic item={card} key={card.id} />)
-            ) : (
-                <Swiper
-                    slidesPerView={3}
-                    spaceBetween={20}
-                    autoplay={{
-                        delay: 3500,
-                        disableOnInteraction: false,
-                    }}
-                    speed={1200}
-                    modules={[Autoplay]}
-                    breakpoints={{
-                        1200: {
-                            slidesPerView: 4,
-                        },
-                    }}
-                    className={styles.swiper_wrapper}
-                >
-                    {cards.map((card) => (
-                        <SwiperSlide key={card.id}>
-                            <CardBasic item={card} />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            )}
+            <Swiper
+                slidesPerView={3}
+                spaceBetween={20}
+                autoplay={{
+                    delay: 3500,
+                    disableOnInteraction: false,
+                }}
+                speed={1200}
+                modules={[Autoplay]}
+                breakpoints={{
+                    1200: {
+                        slidesPerView: 4,
+                    },
+                }}
+                className={styles.swiper_wrapper}
+            >
+                {cards.map((card) => (
+                    <SwiperSlide key={card.id}>
+                        <CardBasic item={card} />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </>
     )
 }
