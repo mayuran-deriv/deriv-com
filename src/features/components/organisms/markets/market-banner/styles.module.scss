@@ -16,7 +16,7 @@
 .flex_container {
     @include breakpoints(tablet) {
         position: relative;
-        min-block-size: 40rem;
+        min-block-size: 36rem;
         isolation: isolate;
     }
     @include breakpoints(desktop) {
