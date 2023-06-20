@@ -16,9 +16,9 @@ const ProductsHeading: FC<{ title: TString[] }> = ({ title }) => {
                 className="visible-larger-than-tablet"
             >
                 {title.map((text, index) => (
-                    <>
-                        <Localize key={index} translate_text={text} /> <br />
-                    </>
+                    <React.Fragment key={index}>
+                        <Localize translate_text={text} /> <br />
+                    </React.Fragment>
                 ))}
             </Typography.Heading>
             <Typography.Heading
@@ -31,9 +31,9 @@ const ProductsHeading: FC<{ title: TString[] }> = ({ title }) => {
                 className="visible-phone-and-tablet"
             >
                 {title.map((text, index) => (
-                    <>
-                        <Localize key={index} translate_text={text} />{' '}
-                    </>
+                    <React.Fragment key={index}>
+                        <Localize translate_text={text} />{' '}
+                    </React.Fragment>
                 ))}
             </Typography.Heading>
         </>
