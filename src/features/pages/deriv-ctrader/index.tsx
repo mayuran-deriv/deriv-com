@@ -1,6 +1,7 @@
 import React from 'react'
 import { ctrader_data } from './data'
 import CTraderTradeDescription from './trade-description'
+import { hero_content_data } from './hero/data'
 import CTraderNumbers from './numbers'
 import {
     TradingPlatformHowToStart,
@@ -8,6 +9,7 @@ import {
     TradingPlatformWhatHave,
     TradingPlatformWhyTrade,
 } from 'features/components/templates/trading-platform'
+import Hero from 'features/components/molecules/deriv-products-hero'
 import MainNav from 'features/components/templates/navigation/main-nav'
 import Footer from 'features/components/templates/footer/'
 import Layout from 'features/components/templates/layout'
@@ -33,6 +35,7 @@ const DerivCTrader = () => {
                 )}
             />
             {/*need provide new*/}
+            <Hero contentData={hero_content_data} />
             {/*<TradingPlatformHero trading_platform_hero={trading_platform_hero} />*/}
             {/*<TradingPlatformNumbers trading_platform_numbers={trading_platform_numbers} />*/}
             <CTraderNumbers />
