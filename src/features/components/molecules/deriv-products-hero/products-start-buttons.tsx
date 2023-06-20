@@ -2,7 +2,11 @@ import React, { FC, ReactElement } from 'react'
 import HeroMainButton from './products-signup'
 import FlexBox from 'features/components/atoms/flex-box'
 
-const ProductsButtons: FC<{ feature_buttons: ReactElement[] }> = ({ feature_buttons }) => {
+interface ProductsButtonsProps {
+    feature_buttons: ReactElement[]
+}
+
+const ProductsButtons = ({ feature_buttons }: ProductsButtonsProps) => {
     return (
         <FlexBox.Box wrap="wrap" gap="5x">
             <FlexBox.Item pt={'15x'} basis="full" md={{ basis: '6-12' }}>

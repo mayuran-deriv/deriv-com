@@ -3,7 +3,11 @@ import { Localize } from 'components/localization'
 import Typography from 'features/components/atoms/typography'
 import { TString } from 'types/generics'
 
-const ProductsHeading: FC<{ title: TString[] }> = ({ title }) => {
+interface ProductsHeadingProps {
+    title: TString[]
+}
+
+const ProductsHeading = ({ title }: ProductsHeadingProps) => {
     return (
         <>
             <Typography.Heading

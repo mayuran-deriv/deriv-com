@@ -12,23 +12,13 @@ const HeroMainButton = () => {
 
     if (is_logged_in) {
         return (
-            <Button.Primary
-                className={hero_main_btn}
-                type={'button'}
-                onClick={handleGetTrading}
-                aria-label="Get trading"
-            >
+            <Button.Primary className={hero_main_btn} type={'button'} onClick={handleGetTrading}>
                 <Localize translate_text={'_t_Get trading_t_'} />
             </Button.Primary>
         )
     }
     return (
-        <Button.Primary
-            className={hero_main_btn}
-            type={'button'}
-            aria-label="create free demo account"
-            onClick={handleSignup}
-        >
+        <Button.Primary className={hero_main_btn} type={'button'} onClick={handleSignup}>
             <Localize translate_text={'_t_Create free demo account_t_'} />
         </Button.Primary>
     )
