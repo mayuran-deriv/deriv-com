@@ -36,6 +36,7 @@ const NavigationTabMenu = ({
                 'menu-item',
                 is_no_border_bottom && 'navigation-tabs',
                 { selected: button_text == current_tab },
+                class_name,
             )}
             url={{ type: 'internal', to: to }}
             no_hover
