@@ -28,27 +28,31 @@ const NavigationTabMenu = ({
     const { is_mobile } = useBreakpoints()
     return (
         <Link
-            className={dclsx('flex', 'justify-start', 'md-justify-center')}
+            className={dclsx(
+                'flex',
+                'flex-dir-col',
+                'justify-start',
+                'md-justify-center',
+                'tab',
+                'menu-item',
+                is_no_border_bottom && 'navigation-tabs',
+                { selected: button_text == current_tab },
+            )}
             url={{ type: 'internal', to: to }}
             no_hover
             key={button_text}
         >
-            <Tab.MenuItem
-                selected={button_text == current_tab}
-                is_no_border_bottom={is_no_border_bottom}
+            {icon && (
+                <FlexBox.Box justify="center" padding_block="6x">
+                    {icon && <Image src={icon} width="64px" height="64px" />}
+                </FlexBox.Box>
+            )}
+            <Typography.Paragraph
+                size={is_mobile ? 'medium' : 'small'}
+                textcolor={button_text === current_tab ? 'brand' : 'light-black'}
             >
-                {icon && (
-                    <FlexBox.Box justify="center" padding_block="6x">
-                        {icon && <Image src={icon} width="64px" height="64px" />}
-                    </FlexBox.Box>
-                )}
-                <Typography.Paragraph
-                    size={is_mobile ? 'medium' : 'small'}
-                    textcolor={button_text === current_tab ? 'brand' : 'light-black'}
-                >
-                    <Localize translate_text={button_text} />
-                </Typography.Paragraph>
-            </Tab.MenuItem>
+                <Localize translate_text={button_text} />
+            </Typography.Paragraph>
         </Link>
     )
 }
