@@ -31,8 +31,7 @@ const NavigationTabMenu = ({
             className={dclsx(
                 'flex',
                 'flex-dir-col',
-                'justify-start',
-                'md-justify-center',
+                'align-items-center',
                 'tab',
                 'menu-item',
                 is_no_border_bottom && 'navigation-tabs',
@@ -42,11 +41,7 @@ const NavigationTabMenu = ({
             no_hover
             key={button_text}
         >
-            {icon && (
-                <FlexBox.Box justify="center" padding_block="6x">
-                    {icon && <Image src={icon} width="64px" height="64px" />}
-                </FlexBox.Box>
-            )}
+            {icon && <Image src={icon} width="64px" height="64px" className={dclsx('margin-3x')} />}
             <Typography.Paragraph
                 size={is_mobile ? 'medium' : 'small'}
                 textcolor={button_text === current_tab ? 'brand' : 'light-black'}
