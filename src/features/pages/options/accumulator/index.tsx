@@ -34,7 +34,13 @@ const AccumulatorsOptions = () => {
                 <Localize translate_text="_t_Check out our quick video walkthrough of how to trade accumulators on Deriv Trader._t_" />
             ),
             content: (
-                <div style={{ position: 'relative' }}>
+                <Link
+                    target="_blank"
+                    url={{
+                        type: 'non-company',
+                        href: 'https://blog.deriv.com/videos/how-to-trade-accumulator-options-on-deriv-trader/',
+                    }}
+                >
                     <StaticImage
                         src="../../../../images/common/trade-types/accumulator-video-bg.png"
                         alt={localize('_t_Step-by-step guide to trade on accumulator options_t_')}
@@ -42,17 +48,9 @@ const AccumulatorsOptions = () => {
                         formats={['webp', 'auto']}
                         quality={100}
                         style={{ position: 'relative' }}
+                        className="cursor-pointer"
                     />
-                    <iframe
-                        src="https://player.vimeo.com/video/917007011?h=5cd6ecb94c"
-                        frameBorder="0"
-                        width="100%"
-                        height="200"
-                        style={{ position: 'absolute', top: '0', left: '0', zIndex: '9999999' }}
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowFullScreen
-                    ></iframe>
-                </div>
+                </Link>
             ),
             size: 'md',
             align: 'start',
