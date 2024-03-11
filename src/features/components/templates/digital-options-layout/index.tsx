@@ -1,6 +1,6 @@
 import React from 'react'
-import OptionsLayout from '../options-layout'
 import { AvailableDigitalOptionsData } from './data'
+import OptionsLayout from 'features/components/quill/options-layout'
 import Flex from 'features/components/atoms/flex-box'
 import AvailableOptions from 'features/components/organisms/available-options'
 

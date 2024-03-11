@@ -1,7 +1,10 @@
 import React, { ReactNode } from 'react'
 import MainRowNavigation from '../../templates/navigation/main-nav'
 import Layout from '../quill-layout'
+import { start_trading_data, why_trade_options_data } from './data'
 import MainFooter from 'features/components/templates/footer'
+import StartTrading from 'features/components/templates/start-trading'
+import WhyTradeOptions from 'features/components/templates/why-trade-options'
 import { TString } from 'types/generics'
 import OptionsTopTab from 'features/components/organisms/options-top-tab'
 import WhatAreDigitalOptions from 'features/components/organisms/what-are-digital-options'
@@ -21,6 +24,8 @@ const OptionsLayout = ({
     is_coming_soon = false,
     has_content_block = false,
 }: OptionsLayoutProps) => {
+    const shouldRenderComponents = !window.location.href.includes('accumulator-options')
+
     return (
         <>
             <Layout>
@@ -33,6 +38,12 @@ const OptionsLayout = ({
                     has_content_block={has_content_block}
                 />
                 {children}
+                {shouldRenderComponents && (
+                    <>
+                        <WhyTradeOptions data={why_trade_options_data} />
+                        <StartTrading data={start_trading_data} />
+                    </>
+                )}
                 <MainFooter />
             </Layout>
         </>
