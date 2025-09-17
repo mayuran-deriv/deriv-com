@@ -1,0 +1,224 @@
+@use './theme-mixins' as *;
+@import './variables';
+
+.at-typography {
+    line-height: calc(2px + 2.5ex + 2px);
+    color: $color-black-9;
+    word-break: break-word;
+}
+
+[dir='ltr'] .at-typography-font-IBM {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+[dir='ltr'] .at-typography-font-UBUNTU {
+    font-family: Ubuntu, sans-serif;
+}
+
+.at-typography-link {
+    cursor: pointer;
+    text-decoration: none;
+    transition: text-shadow 0.25s;
+
+    &:active {
+        color: $color-red;
+    }
+
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.32;
+    }
+}
+.at-typography-hover {
+    &:hover {
+        color: $color-red;
+        text-decoration: underline;
+    }
+}
+
+.at-typography-align-center {
+    text-align: center;
+}
+.at-typography-align-left {
+    text-align: start;
+}
+.at-typography-align-right {
+    text-align: end;
+}
+.at-typography-align-justify {
+    text-align: justify;
+}
+
+.at-typography-color-brand {
+    color: $color-brand;
+}
+.at-typography-color-primary {
+    color: $color-black-9;
+}
+.at-typography-color-secondary {
+    color: #414652b2;
+}
+.at-typography-color-tertiary {
+    color: #425651;
+}
+.at-typography-color-inverted {
+    color: $color-white;
+}
+.at-typography-color-white {
+    color: $color-white;
+}
+.at-typography-color-black {
+    color: $color-black-9;
+}
+.at-typography-color-light {
+    color: $color-grey-5;
+}
+.at-typography-color-light-grey {
+    color: $color-grey-19;
+}
+.at-typography-color-light-black {
+    color: #000000b8;
+}
+.at-typography-color-profit {
+    color: $color-blue-7;
+}
+.at-typography-color-gray-shade {
+    color: $color-grey-46;
+}
+.at-typography-break-word {
+    word-break: break-word;
+}
+
+.at-typography-break-normal {
+    word-break: normal;
+}
+
+.at-typography-weight-normal {
+    font-weight: normal;
+}
+.at-typography-weight-bold {
+    font-weight: bold;
+}
+.at-typography-weight-bolder {
+    font-weight: 700;
+}
+
+*[dir='ltr'] {
+    .at-heading {
+        font-family: Ubuntu, sans-serif;
+    }
+}
+
+.at-heading-xxxl {
+    @include font-size($font-size-1300);
+}
+
+.at-heading-xxl {
+    @include font-size($font-size-1200);
+}
+
+.at-heading-xlarge {
+    @include font-size($font-size-1100);
+}
+
+.at-heading-large {
+    @include font-size($font-size-1000);
+}
+
+.at-heading-medium {
+    @include font-size($font-size-900);
+}
+
+.at-heading-small {
+    @include font-size($font-size-800);
+}
+
+.at-heading-xs {
+    @include font-size($font-size-700);
+}
+
+.at-heading-xxs {
+    @include font-size($font-size-600);
+}
+
+.at-text-xxxl {
+    @include font-size($font-size-900);
+}
+
+.at-text-xxl {
+    @include font-size($font-size-800);
+}
+
+.at-text-xlarge {
+    @include font-size($font-size-700);
+}
+
+.at-text-large {
+    @include font-size($font-size-600);
+}
+
+.at-text-medium {
+    @include font-size($font-size-500);
+}
+
+.at-text-small {
+    @include font-size($font-size-400);
+}
+
+.at-text-xs {
+    @include font-size($font-size-300);
+}
+
+.at-text-xxs {
+    @include font-size($font-size-200);
+}
+
+@mixin typography-align($media-name) {
+    .#{$media-name + #{'-'}}at-typography-align-center {
+        @include media($media-name) {
+            text-align: center;
+        }
+    }
+    .#{$media-name + #{'-'}}at-typography-align-left {
+        @include media($media-name) {
+            text-align: start;
+        }
+    }
+    .#{$media-name + #{'-'}}at-typography-align-right {
+        @include media($media-name) {
+            text-align: end;
+        }
+    }
+    .#{$media-name + #{'-'}}at-typography-align-justify {
+        @include media($media-name) {
+            text-align: justify;
+        }
+    }
+}
+
+@mixin typography-weight($media-name) {
+    .#{$media-name + #{'-'}}at-typography-weight-normal {
+        @include media($media-name) {
+            font-weight: normal;
+        }
+    }
+    .#{$media-name + #{'-'}}at-typography-weight-bold {
+        @include media($media-name) {
+            font-weight: bold;
+        }
+    }
+    .#{$media-name + #{'-'}}at-typography-weight-bolder {
+        @include media($media-name) {
+            font-weight: 700;
+        }
+    }
+}
+
+$typography-medias: (md, lg);
+
+@each $name in $typography-medias {
+    @include typography-align($name);
+}
+@each $name in $typography-medias {
+    @include typography-weight($name);
+}

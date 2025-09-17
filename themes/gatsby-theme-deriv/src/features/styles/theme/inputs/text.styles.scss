@@ -1,0 +1,69 @@
+@import 'features/styles/theme/variables';
+
+.at-text_input {
+    &_container {
+        position: relative;
+        &.error {
+            & > input {
+                border: 1px solid $color-brand;
+            }
+            label {
+                color: $color-brand !important;
+            }
+        }
+        & > input {
+            font-size: 1.6rem;
+            display: block;
+            inline-size: 100%;
+            block-size: 4rem;
+            padding: 0 2rem;
+            background: $color-white;
+            color: $text-color-primary;
+            border: 1px solid $color-grey-7;
+            border-radius: 16px;
+            box-sizing: border-box;
+
+            &::placeholder {
+                color: transparent;
+            }
+
+            &:focus {
+                outline: none;
+                ~ .at-text_input_label {
+                    inset-block-start: -8px;
+                    color: $color-black;
+                    inline-size: auto;
+                }
+            }
+            &:not(:placeholder-shown) ~ .at-text_input_label {
+                inset-block-start: -12px;
+                inline-size: auto;
+                color: $color-black;
+            }
+        }
+        .at-cross_icon {
+            position: absolute;
+            inset-inline-end: 0.8rem;
+            inset-block-start: 1.2rem;
+            block-size: 1.6rem;
+            inline-size: 1.6rem;
+            cursor: pointer;
+        }
+    }
+
+    &_label {
+        position: absolute;
+        pointer-events: none;
+        inset-inline-start: 15px;
+        inset-block-start: 10px;
+        color: $color-grey-7;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+        inline-size: 80%;
+    }
+
+    &_error {
+        inset-inline-start: 15px;
+    }
+}
